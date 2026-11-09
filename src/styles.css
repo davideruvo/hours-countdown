@@ -1,0 +1,106 @@
+html,
+body {
+  background-color: #333;
+  user-select: none;
+}
+body {
+  padding: 10px;
+}
+iframe {
+  display: none;
+}
+.App {
+  font-family: "Open sans", sans-serif;
+  text-align: center;
+}
+.top {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.clock,
+.countdown {
+  cursor: default;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+.clock {
+  background-color: #888;
+  box-shadow: 5px 2px 5px #000;
+}
+.countdown {
+  font-size: 80%;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+}
+.day {
+  background-color: #555;
+  width: calc(50% - 30px);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 2px 5px #000;
+}
+.line {
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+.hour {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  min-height: 80px;
+  min-width: 80px;
+  font-size: 32px;
+  background-color: #888;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  box-shadow: 5px 2px 5px #000;
+}
+.hour.past {
+  background-color: #333;
+  color: #555;
+  box-shadow: inset 5px 2px 5px #000;
+  transition: 0.5s;
+}
+.hour.current {
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@media (max-width: 1620px) {
+  .day {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+@media (max-width: 800px) {
+  .day {
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    font-size: 32px;
+  }
+  50% {
+    font-size: 42px;
+  }
+  100% {
+    font-size: 32px;
+  }
+}
